@@ -3742,7 +3742,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, int prevBlockHeigh
                 tx.GetHash().ToString(),
                 FormatStateMessage(state));
               }
-              if(sporkManager.IsSporkActive(SPORK_15_DEV_PAYMENT_ENFORCEMENT)
+              if(sporkManager.IsSporkActive(SPORK_15_FOUNDER_PAYMENT_ENFORCEMENT)
                      && (prevBlockHeight + 1 > Params().GetConsensus().nDevPaymentsStartBlock)) {
                   //	printf("dev block %d=%lld", prevBlockHeight);
                   	if(devPayment.IsBlockPayeeValid(tx,prevBlockHeight+1,blockReward)) {

@@ -19,7 +19,7 @@ void DevPayment::FillDevPayment(CMutableTransaction& txNew, int nBlockHeight, CA
     // fill payee with the dev address
     payee = GetScriptForDestination(devAddress.Get());
 
-    // GET DEV PAYMENT VARIABLES SETUP
+    // GET FOUNDER PAYMENT VARIABLES SETUP
     CAmount devPayment = getDevPaymentAmount(nBlockHeight, blockReward);
     // split reward between miner ...
     txNew.vout[0].nValue -= devPayment;
