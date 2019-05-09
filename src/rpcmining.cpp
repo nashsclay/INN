@@ -638,7 +638,7 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
    }
    result.push_back(Pair("dev", devObj));
    result.push_back(Pair("dev_payments_started", pindexPrev->nHeight + 1 > Params().GetConsensus().nDevPaymentsStartBlock));
-   result.push_back(Pair("dev_payments_enforced", sporkManager.IsSporkActive(SPORK_15_FOUNDER_PAYMENT_ENFORCEMENT)));
+   result.push_back(Pair("dev_payments_enforced", sporkManager.IsSporkActive(SPORK_15_DEV_PAYMENT_ENFORCEMENT)));
 
     UniValue superblockObjArray(UniValue::VARR);
     if(pblock->voutSuperblock.size()) {
