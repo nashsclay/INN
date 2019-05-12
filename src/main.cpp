@@ -3749,14 +3749,14 @@ bool CheckBlock(const CBlock& block, CValidationState& state, int prevBlockHeigh
                   	//	printf("dev found on block %d", prevBlockHeight);
                   		devTransaction = true;
                   		break;
-                    
+
                   } else {
                   	devTransaction = true;
                   }
               }
               if(!devTransaction) {
               	LogPrintf("CheckBlock() -- Dev payment of %s is not found\n", block.txoutDev.ToString().c_str());
-              	return state.DoS(0, error("CheckBlock(MON): transaction %s does not contains dev transaction",
+              	return state.DoS(0, error("CheckBlock(INN): transaction %s does not contains dev transaction",
               			block.txoutDev.GetHash().ToString()), REJECT_INVALID, "dev-not-found");
               }
 
@@ -3948,7 +3948,7 @@ static bool AcceptBlock(const CBlock& block, CValidationState& state, const CCha
         if (fTooFarAhead) return true;      // Block height is too high
     }
     const int nPrevHeight = pindex->pprev == NULL ? 0 : pindex->pprev->nHeight;
-    if ((!CheckBlock(block, state,nPrevHeight)) || !ContextualCheckBlock(block, state, pindex->pprev)) {
+    if ((!CheckBlock(block, state, nPrevHeight)) || !ContextualCheckBlock(block, state, pindex->pprev)) {
         if (state.IsInvalid() && !state.CorruptionPossible()) {
             pindex->nStatus |= BLOCK_FAILED_VALID;
             setDirtyBlockIndex.insert(pindex);
@@ -3998,7 +3998,7 @@ bool ProcessNewBlock(CValidationState& state, const CChainParams& chainparams, c
 {
     // Preliminary checks
     const int height = chainActive.Height();
-    bool checked = CheckBlock(*pblock, state, height);
+    bool checked = CheckBlock(*pblock, state, nPrevHeight);
 
     {
         LOCK(cs_main);
