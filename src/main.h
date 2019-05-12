@@ -157,6 +157,7 @@ extern size_t nCoinCacheUsage;
 extern CFeeRate minRelayTxFee;
 extern bool fAlerts;
 extern bool fEnableReplacement;
+extern DevPayment devPayment;
 
 extern std::map<uint256, int64_t> mapRejectedBlocks;
 
