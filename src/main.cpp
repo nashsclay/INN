@@ -3998,7 +3998,7 @@ bool ProcessNewBlock(CValidationState& state, const CChainParams& chainparams, c
 {
     // Preliminary checks
     const int height = chainActive.Height();
-    bool checked = CheckBlock(*pblock, state, nPrevHeight);
+    bool checked = CheckBlock(*pblock, state, height);
 
     {
         LOCK(cs_main);
