@@ -3736,7 +3736,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, int prevBlockHeigh
     bool devTransaction = false;
     CAmount blockReward = GetBlockSubsidy(0, prevBlockHeight, Params().GetConsensus(), false);
     // const CAmount devReward = devPayment.getDevPaymentAmount(prevBlockHeight, blockReward);
-    BOOST_FOREACH(const CTransaction& tx, block.vtx)
+    BOOST_FOREACH(const CTransaction& tx, block.vtx) {
         if (!CheckTransaction(tx, state)) {
             return error("CheckBlock(): CheckTransaction of %s failed with %s",
                 tx.GetHash().ToString(),
