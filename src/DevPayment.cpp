@@ -1,5 +1,5 @@
 #include "DevPayment.h"
-#include "standard.h";
+//#include "standard.h";
 #include "util.h"
 #include "chainparams.h"
 #include <boost/foreach.hpp>
