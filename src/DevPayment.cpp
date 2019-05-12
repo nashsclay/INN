@@ -1,5 +1,5 @@
 #include "DevPayment.h"
-//#include "standard.h";
+#include "standard.h";
 #include "util.h"
 #include "chainparams.h"
 #include <boost/foreach.hpp>
@@ -19,7 +19,7 @@ void DevPayment::FillDevPayment(CMutableTransaction& txNew, int nBlockHeight, CA
     // fill payee with the dev address
     payee = GetScriptForDestination(devAddress.Get());
 
-    // GET FOUNDER PAYMENT VARIABLES SETUP
+    // GET DEV PAYMENT VARIABLES SETUP
     CAmount devPayment = getDevPaymentAmount(nBlockHeight, blockReward);
     // split reward between miner ...
     txNew.vout[0].nValue -= devPayment;
