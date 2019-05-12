@@ -3749,7 +3749,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, int prevBlockHeigh
                   	//	printf("dev found on block %d", prevBlockHeight);
                   		devTransaction = true;
                   		break;
-
+                    }
                   } else {
                   	devTransaction = true;
                   }
