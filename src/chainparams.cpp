@@ -136,6 +136,7 @@ public:
         vSeeds.push_back(CDNSSeedData("62.210.90.59:14520", "62.210.90.59:14520"));
         vSeeds.push_back(CDNSSeedData("62.210.91.126:14520", "62.210.91.126:14520"));
         vSeeds.push_back(CDNSSeedData("207.148.30.107:14520", "207.148.30.107:14520"));
+    //  vSeeds.push_back(CDNSSeedData("", ""));
 
         // Innova addresses start with 'i'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,102);

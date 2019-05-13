@@ -1741,7 +1741,7 @@ NOTE:   unlike bitcoin we are using PREVIOUS block height here,
 */
 CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params& consensusParams, bool fSuperblockPartOnly)
 {
-    CAmount nSubsidy = 20 * COIN;
+    CAmount nSubsidy;
 
     if (nPrevHeight == 0){
         return 1000000 * COIN;
@@ -1754,16 +1754,13 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
     for (int i = consensusParams.nSubsidyHalvingInterval; i <= nPrevHeight; i += consensusParams.nSubsidyHalvingInterval) {
         nSubsidy -= nSubsidy*0.12;
     }
-
+  }
     return fSuperblockPartOnly ? 0 : nSubsidy;
 }
 
 CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
 {
-    if (nHeight >= 185000) {
-      return blockValue*0.75;
-    }
-    return blockValue*0.75;
+return blockValue * 0.7;
   }
 
 bool IsMasternodeCollateral(CAmount value) {
@@ -1776,9 +1773,9 @@ bool IsMasternodeCollateral(CAmount value) {
       return true;
     } else {
       return false;
+      }
+    }
   }
-  }
-}
 
 bool IsInitialBlockDownload()
 {
