@@ -1748,7 +1748,7 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
     } else if(nPrevHeight >= 1 && nPrevHeight <= 185000) {
 		    nSubsidy = 20 * COIN;
     } else {
-      nSubisdy = 14 * COIN;
+      nSubsidy = 14 * COIN;
 
     // yearly decline of production by 12% per year, projected 136m coins max by year 2050+.
     for (int i = consensusParams.nSubsidyHalvingInterval; i <= nPrevHeight; i += consensusParams.nSubsidyHalvingInterval) {
@@ -1764,7 +1764,7 @@ CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
       return blockValue*0.75;
     }
     return blockValue*0.75;
-}
+  }
 
 bool IsMasternodeCollateral(CAmount value) {
   if (chainActive.Height() < 376250 ){
