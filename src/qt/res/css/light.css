@@ -24,15 +24,16 @@ background-color:#fff;
 }
 
 QMenuBar::item:selected {
-background-color:#f8f6f6;
+background-color:#3398CC;
+color: #fff;
 }
 
 QMenu {
-background-color:#f8f6f6;
+background-color:#3398CC;
 }
 
 QMenu::item {
-color:#333;
+color:#fff;
 }
 
 QMenu::item:selected {
@@ -48,13 +49,12 @@ margin:0;
 }
 
 QToolBar > QToolButton {
-background-color:#fff;
-border:0px solid #333;
+background-color:#1c75bc;
+border:0px solid #fff;
 min-height:2.5em;
 min-width: 8em;
 padding: 0em 1em;
-/*font-weight:bold;*/
-color:#333;
+color:#fff;
 }
 
 QToolBar > QToolButton:checked {
@@ -1599,7 +1599,7 @@ QLabel#transactionSumLabel { /* Example of setObjectName for widgets without nam
 color:#333333;
 font-weight:bold;
 }
- 
+
 QLabel#transactionSum { /* Example of setObjectName for widgets without name */
 color:#333333;
 }
@@ -1613,5 +1613,3 @@ background-color:#F8F6F6;
 QDialog#TransactionDescDialog QTextEdit { /* Contents of Receive Coin Dialog */
 border:1px solid #d7d7d7;
 }
-
-
