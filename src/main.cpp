@@ -1760,7 +1760,7 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
 
 CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
 {
-return blockValue * 0.7;
+return blockValue * 0.75;
   }
 
 bool IsMasternodeCollateral(CAmount value) {
