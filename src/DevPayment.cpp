@@ -8,7 +8,7 @@ CAmount DevPayment::getDevPaymentAmount(int blockHeight, CAmount blockReward) {
 	 if (blockHeight < 1){
 		 return 0;
 	 }
-	 return blockReward * 0.003;
+	 return blockReward * 0.05;
 }
 
 void DevPayment::FillDevPayment(CMutableTransaction& txNew, int nBlockHeight, CAmount blockReward, CTxOut& txoutDevRet) {
