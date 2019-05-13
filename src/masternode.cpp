@@ -537,8 +537,8 @@ bool CMasternodeBroadcast::SimpleCheck(int& nDos)
 
     int mainnetDefaultPort = Params(CBaseChainParams::MAIN).GetDefaultPort();
     if(Params().NetworkIDString() != CBaseChainParams::MAIN) {
-+        if(addr.GetPort() == mainnetDefaultPort) return false;
-+    }
+        if(addr.GetPort() == mainnetDefaultPort) return false;
+    }
 
     return true;
 }
