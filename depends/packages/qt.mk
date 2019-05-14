@@ -49,7 +49,7 @@ $(package)_config_opts += -no-sql-sqlite2
 $(package)_config_opts += -prefix $(host_prefix)
 $(package)_config_opts += -hostprefix $(build_prefix)
 $(package)_config_opts += -bindir $(build_prefix)/bin
-$(package)_config_opts += -no-c++11
+$(package)_config_opts += -c++11
 $(package)_config_opts += -openssl-linked
 $(package)_config_opts += -v
 $(package)_config_opts += -static
@@ -76,8 +76,6 @@ $(package)_config_opts += -no-libudev
 $(package)_config_opts += -no-use-gold-linker
 $(package)_config_opts += -reduce-exports
 $(package)_config_opts += -optimized-qmake
-$(package)_config_opts += -no-feature-printer
-$(package)_config_opts += -no-feature-printdialog
 
 ifneq ($(build_os),darwin)
 $(package)_config_opts_darwin = -xplatform macx-clang-linux
