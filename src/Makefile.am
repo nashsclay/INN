@@ -33,6 +33,7 @@ EXTRA_LIBRARIES += \
   crypto/libbitcoin_crypto.a \
   libbitcoin_util.a \
   libbitcoin_common.a \
+	univalue/libbitcoin_univalue.a \
   libbitcoin_server.a \
   libbitcoin_cli.a
 if ENABLE_WALLET
