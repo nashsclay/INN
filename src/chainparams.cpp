@@ -78,8 +78,8 @@ public:
         consensus.nMasternodePaymentsStartBlock = 5040; // one week
         consensus.nMasternodePaymentsIncreaseBlock = 158000; // not used
         consensus.nMasternodePaymentsIncreasePeriod = 576*30; // not used
-        consensus.nDevPaymentsStartBlock = 376250; // test
-        consensus.nPrivatesendForkBlock = 376250; //test
+        consensus.nDevPaymentsStartBlock = 385000; // test
+        consensus.nPrivatesendForkBlock = 390000; //test
         consensus.nInstantSendKeepLock = 24;
         consensus.nBudgetPaymentsStartBlock = 2100000000; // year 10000+
         consensus.nBudgetPaymentsCycleBlocks = 16616;
