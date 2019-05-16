@@ -5,7 +5,7 @@
 #include <boost/foreach.hpp>
 
 CAmount DevPayment::getDevPaymentAmount(int blockHeight, CAmount blockReward) {
-	 if (blockHeight < 1){
+	 if (blockHeight < 185000){
 		 return 0;
 	 }
 	 return blockReward * 0.05;

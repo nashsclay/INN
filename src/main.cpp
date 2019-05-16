@@ -1764,7 +1764,7 @@ return blockValue * 0.75;
   }
 
 bool IsMasternodeCollateral(CAmount value) {
-  if (chainActive.Height() < 376250 ){
+  if (chainActive.Height() < 386000 ){
     return value == DEFAULT_PRIVATESEND_AMOUNT;
   } else {
     if (value == DEFAULT_PRIVATESEND_AMOUNT) {

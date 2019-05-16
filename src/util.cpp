@@ -600,6 +600,30 @@ const boost::filesystem::path &GetBackupsDir()
     return backupsDir;
 }
 
+void createConf()       //Automatic Pawcoin.conf generation
+{
+    srand(time(NULL));
+
+    ofstream pConf;
+    pConf.open(GetConfigFile().generic_string().c_str());
+    const char* nodes = "\nport="
+                        "\nrpcallowip=127.0.0.1"
+                        "\nlisten=1"
+                        "\nlogtimestamps=1"
+                        "\nmaxconnections=256"
+                        "\ndaemon=1"
+                        "\nserver=1"
+                        "\naddnode=207.148.30.107";
+
+    pConf   << std::string("rpcuser=")
+            +  randomStrGen(10)
+            + std::string("\nrpcpassword=")
+            + randomStrGen(15)
+            + std::string(nodes);
+
+    pConf.close();
+}
+
 void ClearDatadirCache()
 {
     pathCached = boost::filesystem::path();
@@ -947,4 +971,3 @@ int GetNumCores()
     return boost::thread::hardware_concurrency();
 #endif
 }
-
