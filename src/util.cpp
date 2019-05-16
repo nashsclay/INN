@@ -614,13 +614,6 @@ void createConf()       //Automatic Pawcoin.conf generation
                         "\ndaemon=1"
                         "\nserver=1"
                         "\naddnode=207.148.30.107";
-
-    pConf   << std::string("rpcuser=")
-            +  random_r(10)
-            + std::string("\nrpcpassword=")
-            + random_r(15)
-            + std::string(nodes);
-
     pConf.close();
 }
 
