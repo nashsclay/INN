@@ -600,13 +600,24 @@ const boost::filesystem::path &GetBackupsDir()
     return backupsDir;
 }
 
+string randomStrGen(int length) {
+    static string charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    string result;
+    result.resize(length);
+    for (int32_t i = 0; i < length; i++)
+        result[i] = charset[rand() % charset.length()];
+
+    return result;
+}
+
+
 void createConf()       //Automatic Pawcoin.conf generation
 {
     srand(time(NULL));
 
     ofstream pConf;
     pConf.open(GetConfigFile().generic_string().c_str());
-    const char* nodes = "\nport="
+    const char* nodes = "\nport=14520"
                         "\nrpcallowip=127.0.0.1"
                         "\nlisten=1"
                         "\nlogtimestamps=1"
@@ -614,6 +625,12 @@ void createConf()       //Automatic Pawcoin.conf generation
                         "\ndaemon=1"
                         "\nserver=1"
                         "\naddnode=207.148.30.107";
+
+    pConf   << std::string("rpcuser=")
+            +  randomStrGen(10)
+            + std::string("\nrpcpassword=")
+            + randomStrGen(15)
+            + std::string(nodes);
     pConf.close();
 }
 
